@@ -28,7 +28,7 @@ public class Lectura_Escritura_Ficheros {
 				return contactos;
 			} else {
 				while (linea != null) {
-					String[] array = linea.split(" ");
+					String[] array = linea.split(";");
 					Contacto c = new Contacto(array[0],array[1],array[2],array[3],Boolean.valueOf(array[4]));
 					contactos.add(c);
 					linea = br.readLine();
@@ -62,7 +62,7 @@ public class Lectura_Escritura_Ficheros {
 
 			try {
 				bw = new BufferedWriter(new FileWriter("Contactos.txt", true));
-				bw.write(contacto.getId()+" "+contacto.getNombre()+" "+contacto.getApellido()+" "+contacto.getNum()+" "+contacto.isBloqueado());
+				bw.write(contacto.getId()+";"+contacto.getNombre()+";"+contacto.getApellido()+";"+contacto.getNum()+";"+contacto.isBloqueado());
 				bw.newLine();
 				System.out.println("Contacto añadido");
 			} catch (IOException e) {
@@ -86,7 +86,8 @@ public class Lectura_Escritura_Ficheros {
 		try {
 			bw = new BufferedWriter(new FileWriter("Contactos.txt"));
 			for (int i = 0; i < contactos.size(); i++) {
-				bw.write(contactos.get(i).getId()+" "+contactos.get(i).getNombre() + " " +contactos.get(i).getApellido()+" "+contactos.get(i).getNum()+" "+contactos.get(i).isBloqueado());
+				bw.write(contactos.get(i).getId()+";"+contactos.get(i).getNombre() + ";" +contactos.get(i).getApellido()+";"+contactos.get(i).getNum()+";"+contactos.get(i).isBloqueado());
+				bw.newLine();
 			}
 
 			System.out.println("Lista actualizada");

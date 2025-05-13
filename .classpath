@@ -6,7 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/elman/Downloads/flatlaf-demo-3.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/elman/Downloads/Tema10EjemplosTransparencia/Tema10Persistencia/jar/mysql-connector-j-8.3.0.jar"/>
+	<classpathentry kind="lib" path="flatlaf-demo-3.6.jar"/>
+	<classpathentry kind="lib" path="mysql-connector-j-8.3.0(1)/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

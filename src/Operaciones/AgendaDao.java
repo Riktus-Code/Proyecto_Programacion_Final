@@ -247,5 +247,15 @@ public class AgendaDao {
 		
 		
 	}
+	public String listar() {
+		String resul="";
+		List<Contacto> c = lef.contactos();
+		Iterator<Contacto> it = c.iterator();
+		while(it.hasNext()) {
+			Contacto c1 = it.next();
+			resul+=c1+"\n";
+		}
+		return resul;
+	}
 
 }
