@@ -41,7 +41,7 @@ public class VentanaEliminarBloqueo extends JFrame {
 	private void desblo1MouseClicked(MouseEvent e) throws SQLException {
 		String desblo = desbloTxt.getText();
 		Lectura_Escritura_Ficheros f1 = new Lectura_Escritura_Ficheros();
-		f1.desbloquearContacto(desblo);
+		f1.eliminarBloqueo(desblo);
 		if(desblo.equals("")) {
 			JOptionPane.showMessageDialog(this, "Debes introducir parametros","ERROR",JOptionPane.INFORMATION_MESSAGE);
 		}else {

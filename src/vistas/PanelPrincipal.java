@@ -24,7 +24,7 @@ import Operaciones.AgendaDao;
  * @author elman
  */
 public class PanelPrincipal extends JFrame {
-	AgendaDao f1 = new AgendaDao();
+	
 	public PanelPrincipal() {
 		try {
             UIManager.setLookAndFeel(new FlatDarculaLaf());

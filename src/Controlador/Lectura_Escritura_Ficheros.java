@@ -180,49 +180,7 @@ public class Lectura_Escritura_Ficheros {
 		ag.ActualizarContactos();
 	}
 
-	public void desbloquearContacto(String id) throws SQLException {
-
-		BufferedReader br = null;
-		List<Contacto> contactos = new ArrayList<>();
-		try {
-			br = new BufferedReader(new FileReader("Contactos.txt"));
-			String linea = br.readLine();
-
-			while (linea != null) {
-				String[] array = linea.split(";");
-				Contacto c = new Contacto(array[0], array[1], array[2], array[3], Boolean.valueOf(array[4]));
-				contactos.add(c);
-				linea = br.readLine();
-
-			}
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			if (br != null) {
-				try {
-					br.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			AgendaDao ag = new AgendaDao();
-			ag.ActualizarContactos();
-		}
-
-		Iterator<Contacto> it = contactos.iterator();
-		while (it.hasNext()) {
-			Contacto c = it.next();
-			if (c.getId().equals(id)) {
-				c.setBloqueado(false);
-			}
-		}
-	}
+	
 
 	public Contacto buscarContacto(String id) {
 		List<Contacto> lista = contactos();
